@@ -1,4 +1,24 @@
-@()
-    @main("Welcome to Play") {
-        <h1>Welcome to Play!</h1>
+@(posts: Seq[Post], form: Form[PostRequest])(implicit request: RequestHeader, messagesProvider: MessagesProvider)
+@main("Welcome to Play") {
+    <h1>Welcome to Play!</h1>
+    @for(error <- form.errors) {
+        <p class="text-danger" id="error">@error.message</p>
     }
+    @helper.form(action = routes.TextBoardController.post()) {
+        @helper.CSRF.formField
+        @helper.inputText(form("post"))
+        <button type="submit">送信</button>
+    }
+    <table class="table">
+        <thead>
+            <tr><th>データ</th></tr>
+        </thead>
+        <tbody>
+        @for(post <- posts.reverse) {
+            <tr>
+                <td class="post-body">@post.body</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
