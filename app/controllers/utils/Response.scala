@@ -1,4 +1,4 @@
-package models
+package controllers.utils
 
 import play.api.libs.json._
 
