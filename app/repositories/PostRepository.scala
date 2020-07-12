@@ -1,5 +1,6 @@
-package controllers
+package repositories
 
+import models.Post
 import scalikejdbc._
 
 object PostRepository {

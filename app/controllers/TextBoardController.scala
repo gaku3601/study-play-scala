@@ -1,10 +1,12 @@
 package controllers
 
 import javax.inject.{Inject, Singleton}
+import models.Post
 import play.api.data.Form
 import play.api.data.Forms._
 import play.api.i18n.I18nSupport
 import play.api.mvc.{AbstractController, Action, AnyContent, ControllerComponents}
+import repositories.PostRepository
 
 case class PostRequest(body: String)
 
