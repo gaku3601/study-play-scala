@@ -6,6 +6,8 @@
 GET         /                    controllers.HelloController.get(name: Option[String])
 GET         /text-board          controllers.TextBoardController.get()
 POST        /text-board          controllers.TextBoardController.post()
+GET         /api                 controllers.APIController.get()
+POST        /api                 controllers.APIController.post()
 
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file        controllers.Assets.versioned(path="/public", file: Asset)
