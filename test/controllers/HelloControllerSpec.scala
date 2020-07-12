@@ -4,8 +4,9 @@ import org.scalatestplus.play.PlaySpec
 import play.api.test.FakeRequest
 import play.api.test.Helpers._
 
-class HelloControllerSpec extends PlaySpec{
+class HelloControllerSpec extends PlaySpec {
   def controller = new HelloController(stubControllerComponents())
+
   "get" should {
     "クエリーパラメータがある場合は「Hello, namae!」というレスポンスを返す" in {
       val name = "namae"

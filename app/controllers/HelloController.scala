@@ -2,11 +2,12 @@ package controllers
 
 import javax.inject.{Inject, Singleton}
 import play.api.Logger
-import play.api.mvc.{AbstractController, Action, AnyContent, ControllerComponents, Request}
+import play.api.mvc._
 
 @Singleton
-class HelloController @Inject()(cc: ControllerComponents) extends AbstractController(cc){
+class HelloController @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
   val logger: Logger = play.api.Logger("play")
+
   def get(name: Option[String]): Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
     logger.info(s"name parameter: $name")
     Ok {
