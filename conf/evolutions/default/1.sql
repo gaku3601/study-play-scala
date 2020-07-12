@@ -1,9 +1,9 @@
 --- !Ups
-create table diaries
+create table posts
 (
     id   SERIAL PRIMARY KEY,
     body varchar(255)
 );
 
 --- !Downs
-drop table diaries;
+drop table posts;

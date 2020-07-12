@@ -1,7 +1,5 @@
 package controllers
 
-import java.time.OffsetDateTime
-
 import javax.inject.{Inject, Singleton}
 import play.api.data.Form
 import play.api.data.Forms._
@@ -25,7 +23,7 @@ class TextBoardController @Inject()(cc: ControllerComponents) extends AbstractCo
     form.bindFromRequest().fold(
       formWithErrors => BadRequest(views.html.index(PostRepository.findAll, formWithErrors)),
       postRequest => {
-        val post = Post(postRequest.body, OffsetDateTime.now)
+        val post = Post(postRequest.body)
         PostRepository.add(post)
         Redirect("/text-board")
       }

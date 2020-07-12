@@ -13,6 +13,9 @@ libraryDependencies ++= Seq(
   jdbc,
   evolutions,
   "org.postgresql" % "postgresql" % "42.2.14",
+  "org.scalikejdbc" %% "scalikejdbc" % "3.4.2",
+  "org.scalikejdbc" %% "scalikejdbc-config" % "3.4.2",
+  "org.scalikejdbc" %% "scalikejdbc-play-initializer" % "2.8.0-scalikejdbc-3.4",
 )
 
 // Adds additional packages into Twirl
